@@ -27,16 +27,19 @@ To get started with the engine, follow these steps:
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/yourusername/text-based-game-engine.git
+    git clone https://github.com/xqill275/Textsmith.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd text-based-game-engine
+    cd Textsmith
     ```
 
-3. The engine doesn't require additional dependencies; Python's standard library is sufficient to run.
+3. install Textsmith
+   ```bash
+   pip install .
+   ```
 
 ---
 
@@ -47,7 +50,7 @@ Here’s a quick example to get you started with the engine:
 ### Example: Basic Game Setup
 
 ```python
-from engine import game, player, room
+from textsmith import Game, Player, Room
 
 # Create rooms
 room1 = room.Room("Test Room1", "This is a test room where you spawn.")
