@@ -1,3 +1,28 @@
+Metadata-Version: 2.4
+Name: textsmith
+Version: 0.1
+Summary: A modular text-based game engine for building interactive text-based games.
+Home-page: https://github.com/xqill275/Textsmith
+Author: Your Name
+Author-email: your-email@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
 # TEXTSMITH
 
 **Version 0.1**
@@ -42,7 +67,7 @@ To get started with the engine, follow these steps:
 
 ## Usage
 
-Here’s a quick example to get you started with the engine:
+Hereâ€™s a quick example to get you started with the engine:
 
 ### Example: Basic Game Setup
 
@@ -88,9 +113,9 @@ The project structure is as follows:
 
 ```
 engine/
-├── game.py          # Contains the Game class handling game logic and commands.
-├── player.py        # Contains the Player class that represents the player.
-├── room.py          # Contains the Room class that defines rooms and connections.
+â”œâ”€â”€ game.py          # Contains the Game class handling game logic and commands.
+â”œâ”€â”€ player.py        # Contains the Player class that represents the player.
+â”œâ”€â”€ room.py          # Contains the Room class that defines rooms and connections.
 ```
 
 ---

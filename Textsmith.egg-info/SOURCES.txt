@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+Textsmith.egg-info/PKG-INFO
+Textsmith.egg-info/SOURCES.txt
+Textsmith.egg-info/dependency_links.txt
+Textsmith.egg-info/top_level.txt
+textsmith.egg-info/PKG-INFO
+textsmith.egg-info/SOURCES.txt
+textsmith.egg-info/dependency_links.txt
+textsmith.egg-info/top_level.txt
