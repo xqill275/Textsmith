@@ -5,6 +5,13 @@ Textsmith.egg-info/PKG-INFO
 Textsmith.egg-info/SOURCES.txt
 Textsmith.egg-info/dependency_links.txt
 Textsmith.egg-info/top_level.txt
+textsmith/Game.py
+textsmith/Player.py
+textsmith/Room.py
+textsmith/__init__.py
+textsmith/game.py
+textsmith/player.py
+textsmith/room.py
 textsmith.egg-info/PKG-INFO
 textsmith.egg-info/SOURCES.txt
 textsmith.egg-info/dependency_links.txt

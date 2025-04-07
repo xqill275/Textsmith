@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Textsmith',
+    name='textsmith',
     version='0.1',
     packages=find_packages(),
     description='A modular text-based game engine for building interactive text-based games.',
