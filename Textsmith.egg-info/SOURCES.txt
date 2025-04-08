@@ -6,6 +6,7 @@ Textsmith.egg-info/SOURCES.txt
 Textsmith.egg-info/dependency_links.txt
 Textsmith.egg-info/top_level.txt
 textsmith/Game.py
+textsmith/InputParser.py
 textsmith/Player.py
 textsmith/Room.py
 textsmith/__init__.py

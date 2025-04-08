@@ -1,3 +1,4 @@
+from textsmith import InputParser
 class Game():
     """
     Represents the game world and handles interactions between the player and rooms.
@@ -84,3 +85,18 @@ class Game():
         self.playerClass.currentRoom = roomObject
         self.currentRoom = roomObject
         print(f"Room updated to {self.currentRoom.name}.")
+
+    def getUserInput(self, dataType, lineArt, attempts=1):
+        inputParser = InputParser(dataType)
+        inputParser.setAttempts(attempts)
+        return inputParser.getUserInput(lineArt)
+
+
+
+    
+
+         
+
+
+
+
