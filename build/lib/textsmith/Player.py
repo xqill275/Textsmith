@@ -11,14 +11,14 @@ class Player():
         moveToRoom(desiredRoom): Moves the player to the specified room.
     """
     
-    def __init__(self, name):
+    def __init__(self):
         """
         Initializes a new player with the given name and sets their current room to None.
 
         Args:
             name (str): The name of the player.
         """
-        self.name = name
+        self.name = "Defualt Name"
         self.currentRoom = None
     
     def moveToRoom(self, desiredRoom):
@@ -29,3 +29,6 @@ class Player():
             desiredRoom (Room): The room the player should move to.
         """
         self.currentRoom = desiredRoom
+
+    def setName(self, newName):
+        self.name = newName

@@ -1,4 +1,4 @@
-class Player():
+class Player:
     """
     Represents a player in the game.
 
@@ -7,25 +7,32 @@ class Player():
         currentRoom (Room or None): The room the player is currently in. Defaults to None.
 
     Methods:
-        __init__(name): Initializes the player with a name and sets the current room to None.
+        __init__(): Initializes the player with a default name and no current room.
         moveToRoom(desiredRoom): Moves the player to the specified room.
+        setName(newName): Updates the player's name.
     """
-    
-    def __init__(self, name):
-        """
-        Initializes a new player with the given name and sets their current room to None.
 
-        Args:
-            name (str): The name of the player.
+    def __init__(self):
         """
-        self.name = name
+        Initializes a new player with a default name and sets their current room to None.
+        """
+        self.name = "Defualt Name"  # Note: Consider correcting the spelling to "Default Name"
         self.currentRoom = None
-    
+
     def moveToRoom(self, desiredRoom):
         """
         Moves the player to the specified room.
 
         Args:
-            desiredRoom (Room): The room the player should move to.
+            desiredRoom (Room): The room to move the player into.
         """
         self.currentRoom = desiredRoom
+
+    def setName(self, newName):
+        """
+        Sets a new name for the player.
+
+        Args:
+            newName (str): The new name to assign to the player.
+        """
+        self.name = newName

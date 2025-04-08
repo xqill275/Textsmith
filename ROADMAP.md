@@ -18,7 +18,7 @@ This roadmap outlines planned features and goals leading up to the **v1.0** rele
 ## Version 0.2 – Game Loop & CLI Input
 >  Goal: Make the engine interactive from the command line
 
-- [ ] Implement a game loop that takes user input
+- [x] Implement a game loop that takes user input
 - [ ] Parse raw input strings (e.g., `"move north"` → `"MOVE", 0`)
 - [ ] Map direction words to direction indexes
 - [ ] Add `EXIT` or `QUIT` command
