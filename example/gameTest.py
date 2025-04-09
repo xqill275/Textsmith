@@ -1,4 +1,4 @@
-from textsmith import Game, Player, Room, InputParser
+from textsmith import Game, Player, Room, InputParser, CommandParser
 
 # Create rooms
 room1 = Room("Test Room1", "This is a test room where you spawn.")
@@ -23,11 +23,13 @@ gameObject.updateRoom(room1)
 gameObject.readCommand("LOOK", None)
 
 # get userInput
-command = gameObject.getUserInput("str", ":// ", 1)
-direction = gameObject.getUserInput("int", ":// ", 1)
-
-
+user_input = gameObject.getUserInput("str", ":// ", 1)
+parser = CommandParser(user_input)
+command, direction = parser.getParsedCommand()
 gameObject.readCommand(command, direction)
+
+
+
 
 # Player looks at the new room description
 gameObject.readCommand("LOOK", None)

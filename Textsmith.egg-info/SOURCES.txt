@@ -5,6 +5,7 @@ Textsmith.egg-info/PKG-INFO
 Textsmith.egg-info/SOURCES.txt
 Textsmith.egg-info/dependency_links.txt
 Textsmith.egg-info/top_level.txt
+textsmith/CommandParser.py
 textsmith/Game.py
 textsmith/InputParser.py
 textsmith/Player.py
