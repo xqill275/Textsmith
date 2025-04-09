@@ -1,27 +1,29 @@
-from textsmith import InputParser
+from textsmith.InputParser import InputParser
+
 class Game():
     """
-    Represents the game world and handles interactions between the player and rooms.
+    Represents the game world and manages interactions between the player and rooms.
 
     Attributes:
-        playerClass (Player): The player object interacting with the game.
-        currentRoom (Room or None): The current room the player is in. Defaults to None.
-        acceptedCommands (list): A list of commands that the game recognizes, such as "LOOK" and "MOVE".
+        playerClass (Player): The player object that interacts with the game.
+        currentRoom (Room or None): The room the player is currently in. Defaults to None.
+        acceptedCommands (list): List of recognized commands such as "LOOK" and "MOVE".
 
     Methods:
-        __init__(playerClass): Initializes the game with a player object and a list of accepted commands.
-        readCommand(command, direction): Processes the player's command and calls the appropriate method.
-        attemptLook(): Displays the description of the current room.
-        attemptMove(direction): Moves the player to the next room in the specified direction.
-        updateRoom(roomObject): Updates the current room for the player and the game.
+        __init__(playerClass): Initializes the game with a player and sets accepted commands.
+        readCommand(command, direction=None): Processes and executes the player's command.
+        attemptLook(): Displays the current room's description.
+        attemptMove(direction): Moves the player in the specified direction if possible.
+        updateRoom(roomObject): Sets the current room for both the player and the game.
+        getUserInput(dataType, lineArt, attempts=1): Retrieves and validates user input based on expected type.
     """
     
     def __init__(self, playerClass):
         """
-        Initializes the game with the given player and sets up the accepted commands list.
+        Initializes the Game instance with a player and sets accepted commands.
 
         Args:
-            playerClass (Player): The player object that will interact with the game.
+            playerClass (Player): The player object that will interact with the game world.
         """
         self.playerClass = playerClass
         self.currentRoom = None
@@ -29,11 +31,14 @@ class Game():
     
     def readCommand(self, command, direction=None):
         """
-        Processes the player's input command and executes the corresponding action.
+        Processes the player's input and performs the appropriate action.
 
         Args:
             command (str): The command entered by the player (e.g., "LOOK", "MOVE").
-            direction (int, optional): The direction to move in (0 - north, 1 - south, 2 - east, 3 - west). Only used with "MOVE" command.
+            direction (int, optional): The direction in which to move (0 - north, 1 - south, 2 - east, 3 - west).
+                                       Required only when using the "MOVE" command.
+
+        If the command is not recognized, an error message is printed.
         """
         if command in self.acceptedCommands:
             if command == "LOOK":
@@ -45,9 +50,9 @@ class Game():
 
     def attemptLook(self):
         """
-        Attempts to display the description of the current room.
+        Displays the description of the current room.
 
-        If there is no current room loaded, it will prompt the player to update the room.
+        If no room is currently loaded, prompts the player to update the room.
         """
         if self.currentRoom:
             description = self.currentRoom.getDescription()
@@ -57,15 +62,14 @@ class Game():
 
     def attemptMove(self, direction):
         """
-        Attempts to move the player to the next room in the specified direction.
+        Moves the player to a connected room in the specified direction, if available.
 
         Args:
-            direction (int): The direction in which to move (0 - north, 1 - south, 2 - east, 3 - west).
+            direction (int): The direction to move (0 - north, 1 - south, 2 - east, 3 - west).
 
-        If there is no valid room in the specified direction, the player will not be moved.
+        If no room exists in the specified direction, the player remains in the current room.
         """
         if self.currentRoom:
-            # Check if there's a valid room in the given direction
             if self.currentRoom.connections[direction] is not None:
                 self.currentRoom = self.currentRoom.connections[direction]
                 self.playerClass.currentRoom = self.currentRoom
@@ -77,26 +81,27 @@ class Game():
 
     def updateRoom(self, roomObject):
         """
-        Updates the current room for both the game and the player.
+        Sets a new current room for both the player and the game.
 
         Args:
-            roomObject (Room): The new room object to set as the current room.
+            roomObject (Room): The room to set as the current room.
         """
         self.playerClass.currentRoom = roomObject
         self.currentRoom = roomObject
         print(f"Room updated to {self.currentRoom.name}.")
 
     def getUserInput(self, dataType, lineArt, attempts=1):
+        """
+        Retrieves and validates user input using the InputParser.
+
+        Args:
+            dataType (str): The expected type of input (e.g., "int", "str").
+            lineArt (str): The prompt or decorative ASCII art to show the user.
+            attempts (int, optional): Number of input attempts allowed. Defaults to 1.
+
+        Returns:
+            Any: The validated user input based on the specified data type.
+        """
         inputParser = InputParser(dataType)
         inputParser.setAttempts(attempts)
         return inputParser.getUserInput(lineArt)
-
-
-
-    
-
-         
-
-
-
-
